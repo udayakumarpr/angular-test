@@ -1,0 +1,88 @@
+<div class="container">
+  <h2 class="heading">Template Driven Form</h2>
+  <div class="row">
+    <div class="col-lg-4">
+      <form #userForm="ngForm" (ngSubmit)="submitForm()">
+
+        <div class="mb-3">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" name="name" #name="ngModel" [(ngModel)]="userDetails.name"
+            required>
+          <!-- <div *ngIf="userForm.controls.name?.touched && userForm.controls.name?.invalid" class="text-danger">
+              Name is required.
+            </div> -->
+          <div [hidden]="name.valid || name.pristine || name.touched" class="alert alert-danger">
+            Name is required
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" name="email" id="email" #email="ngModel"
+            [(ngModel)]="userDetails.email" required>
+          <!-- <div *ngIf="userForm.controls.email?.touched && userForm.controls.email?.invalid" class="text-danger">
+              Please enter a valid email address.
+            </div> -->
+          <div [hidden]="email.valid || email.pristine || email.touched" class="alert alert-danger">
+            Valid Email id is required
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="address">Address</label>
+          <input type="text" class="form-control" name="address" id="address" #address="ngModel"
+            [(ngModel)]="userDetails.address" required>
+          <!-- <div *ngIf="userForm.controls.address?.touched && userForm.controls.address?.invalid" class="text-danger">
+              Address is required.
+            </div> -->
+          <div [hidden]="address.valid || address.pristine || address.touched" class="alert alert-danger">
+            Address is required
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="mobile">Mobile Number</label>
+          <input type="tel" class="form-control" id="mobile" name="mobile" #mobile="ngModel"
+            [(ngModel)]="userDetails.mobile" required pattern="[0-9]{10}">
+          <!-- <div *ngIf="userForm.controls.mobile?.touched && userForm.controls.mobile?.invalid" class="text-danger">
+              Please enter a valid mobile number.
+            </div> -->
+          <div [hidden]="mobile.valid || mobile.pristine || mobile.touched" class="alert alert-danger">
+            mobile no is required
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="age">Age</label>
+          <input type="number" class="form-control" id="age" name="age" #age="ngModel" [(ngModel)]="userDetails.age"
+            required min="20" max="60">
+          <!-- <div *ngIf="userForm.controls.age?.touched && userForm.controls.age?.invalid" class="text-danger">
+              Please enter a valid age.
+            </div> -->
+            <div [hidden]="age.valid || age.pristine || age.touched" class="alert alert-danger">
+              age between 20 to 60 is required
+            </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="gender">Gender</label>
+          <select class="form-control" id="gender" name="gender" #gender="ngModel" [(ngModel)]="userDetails.gender"
+            required>
+            <option value="" disabled>Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+          <!-- <div *ngIf="userForm.controls.gender?.touched && userForm.controls.gender?.invalid" class="text-danger">
+              Please select a gender.
+            </div> -->
+            <div [hidden]="gender.valid || gender.pristine || gender.touched" class="alert alert-danger">
+              Select Gender is required
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="!userForm.form.valid">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

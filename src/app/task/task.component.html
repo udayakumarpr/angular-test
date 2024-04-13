@@ -1,0 +1,31 @@
+<div class="container py-5">
+    <p>task 1</p>
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="mb-3">
+                <!-- <input class="form-control" type="text" [(ngModel)]="keyOfCar"> -->
+                <select class="form-select" [(ngModel)]="keyOfCar">
+                    <option *ngFor="let item of objectKey" value="{{item}}">{{item}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <!-- *ngIf="!listofCarType.value == null && !listofCarType.value == ''" -->
+            <div class="mb-3">
+                <select class="form-select" name="viewCarList">
+                    <option *ngFor="let item of getObjectKey()">{{item}}</option>
+                    <!-- <option *ngFor="let item of cars">{{item[keyOfCar]}}</option> -->
+                    <!-- <ng-container *ngIf="keyOfCar == 'name'" >
+                        <option *ngFor="let item of car"  [ngValue]="item.name">{{item.name}}</option>
+                    </ng-container>
+                    <ng-container *ngIf="keyOfCar == 'modal'">
+                        <option *ngFor="let item of car"  [ngValue]="item.modal">{{item.modal}}</option>
+                    </ng-container>
+                    <ng-container *ngIf="keyOfCar == 'brand'">
+                        <option *ngFor="let item of car"  [ngValue]="item.brand">{{item.brand}}</option>
+                    </ng-container> -->
+                </select>
+            </div>
+        </div>
+    </div>
+</div>

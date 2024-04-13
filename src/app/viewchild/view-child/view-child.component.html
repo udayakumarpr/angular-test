@@ -1,0 +1,34 @@
+<div class="container">    
+    <h3>ViewChild</h3>
+    <br>
+    <div class="card p-3">
+        <p>Exa-1: Same page Template reference</p>
+        <div #divData>
+          View Child Defination will come here
+        </div>
+    </div><br>
+    
+    <div class="card p-3">
+        <p>Exa-2: Updatethe Child Component DOM</p>
+        <div>
+            <button (click)="changeChildValue()">Change Child value</button> &nbsp;
+            <button (click)="clickChildMethod()">Click on alertME</button>
+        </div>
+        <div #ChildComponent>
+          <app-child></app-child>
+        </div>
+    </div>
+    <br>
+    <div class="card p-3">
+        <p>
+            Exa-3: Update the Child Component DOM
+        </p>
+        <div>
+            <button (click)="changeChildValue()">Change Child value</button> &nbsp;
+            <button (click)="clickChildMethod()">Click on alertME</button>
+        </div>
+        <div #ChildComponent2>
+          <app-child></app-child>
+        </div>
+    </div>
+</div>

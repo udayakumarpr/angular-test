@@ -1,0 +1,15 @@
+<div class="card m-3">
+  <div class="card-body">
+    <form #postcreate="ngForm" (ngSubmit)="createAPost()">
+    <div class="form-group form-inline text-left">
+      <label class="mr-4">Title: </label>
+      <input class="form-control col-10" id="title" name="title" #title="ngModel" [(ngModel)]="createPost.title"/>
+    </div>
+    <div class="form-group">
+      <label>Body: </label>
+      <textarea class="form-control" id="body" name="body" #body="ngModel" [(ngModel)]="createPost.body"></textarea>
+    </div>
+    <button class="btn btn-block btn-primary" type="submit">Post </button>
+    </form>
+  </div>
+</div>

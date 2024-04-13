@@ -1,0 +1,9 @@
+<div *ngIf="!hidden" style="height: 100vh;"> 
+    <div class="backdrop1" (click)="hide()"></div>  
+    <div class="modal1">
+      <ng-content></ng-content>
+      <div>
+        <button (click)="hide()">{{ ok }}</button>
+      </div>
+    </div>
+</div>

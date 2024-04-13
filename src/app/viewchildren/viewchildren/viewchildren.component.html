@@ -1,0 +1,11 @@
+<app-children ok="Next" (close)="showAlert(2)">
+	<p> Step 1: Learn angular</p>
+</app-children>
+<app-children ok="Next" (close)="showAlert(3)">
+	Step 2: Love angular
+</app-children>
+<app-children ok="Close">
+	Step 3: Build app
+</app-children>
+<button (click)="showAlert(1)">Show steps</button>
+<div #div1>hello</div>

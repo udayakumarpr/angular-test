@@ -1,0 +1,37 @@
+<div class="container py-4">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    Angualr Directives
+                </div>
+                <div class="card-body">
+                    <h3>Types of Directives</h3>
+                    <div>
+                        <ul class="list-group mb-4">
+                            <li class="list-group-item" *ngFor="let item of directiveType">{{item}}</li>
+                        </ul>
+                    </div>
+
+                    <h4>Component Directives</h4>
+                    <p>These directives create new HTML elements</p>
+                    <div class="mb-4">
+                        <button class="btn btn-primary me-3" (click)="showStructural()">Show Structural</button>
+                        <button class="btn btn-primary" (click)="showAttribute()">Show Attribute</button>
+                    </div>
+                    
+                    <div *ngIf="isStructural" class="mb-4">
+                        <h4>Structural Directives</h4>
+                        <p>These directives control the layout of the DOM.</p>
+                    </div>
+                    <div class="" *ngIf="isAttribute">                    
+                        <h4>Attribute Directives</h4>
+                        <p [ngClass]="{'text-success': textSuccess}">These directives add custom behavior to existing HTML elements.</p>
+                        <button class="btn btn-secondary" (click)="textGreen()">Success Text</button>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+</div>
+
